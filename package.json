@@ -1,0 +1,26 @@
+{
+  "name": "wireguard-peer-manager",
+  "version": "1.0.0",
+  "description": "WireGuard peer management for MikroTik routers",
+  "main": "backend/server.js",
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node backend/server.js",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "dev": "concurrently \"nodemon backend/server.js\" \"cd frontend && npm start\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.18.2",
+    "node-routeros": "^1.1.0",
+    "sqlite3": "^5.1.6",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
